@@ -1,13 +1,11 @@
+//import math;
 fun main(args: Array<String>) {
     println("Hello World!")
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
     println("Program arguments: ${args.joinToString()}")
-}
-//
-//
-//import math
+
 //
 //child_meal = float(input("What is the price of a child's meal? "))
 //
@@ -32,3 +30,5 @@ fun main(args: Array<String>) {
 //change=((float(input("What is the payment amount in dollars ? ")))-(tip+(((child_meal*actual_children)+(adult_meal*actual_adults))+(((((child_meal*actual_children)+(adult_meal*actual_adults))*tax_initial)/100)))))
 //
 //print(f"Change: ${change}")
+//
+}
