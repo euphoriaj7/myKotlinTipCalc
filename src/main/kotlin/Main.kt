@@ -1,14 +1,8 @@
 //import math;
 fun main(args: Array<String>) {
-    println("Hello World!")
-
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
-
-//
-//child_meal = float(input("What is the price of a child's meal? "))
-//
+    println("What is the price of a child's meal? ");
+    var kidsMealPrice = readln();
+    println(kidsMealPrice);
 //adult_meal = float(input("What is the price of an adult's meal? "))
 //
 //actual_children = int(input("How many children are there? "))
