@@ -70,7 +70,7 @@ fun <boolean> main(args: Array<String>) {
 //print(f"Change: ${change}")
     var customerPaid: Boolean = true
     while (customerPaid) {
-        if (change >= 0) {
+        if (change <= 0) {
             print("Please put in an amount that will cover the full cost")
         } else {
             val df4 = DecimalFormat("#.##")
