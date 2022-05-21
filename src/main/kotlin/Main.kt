@@ -71,13 +71,13 @@ fun <boolean> main(args: Array<String>) {
     var customerPaid: Boolean = true
     while (customerPaid) {
         if (change >= 0) {
+            print("Please put in an amount that will cover the full cost")
+        } else {
             val df4 = DecimalFormat("#.##")
             df.roundingMode = RoundingMode.DOWN
             val TotalRoundoff = df4.format(change.toDouble())
             print("Your change back is: $${changeRoundoff}\nThanks for coming in")
             break
-        } else {
-            print("Please put in an amount that will cover the full cost")
         }
     }}
 
