@@ -23,24 +23,54 @@ fun main(args: Array<String>) {
     println("The tax applied here is: ${taxInitial}%")
     println("-----")
 //print(f"Subtotal: ${((child_meal*actual_children)+(adult_meal*actual_adults))}")
-    println("Subtotal: ${(kidsMealPrice.toDouble()*numOfChildren.toDouble() + (adultMealPrice.toDouble()*numOfAdults.toDouble()))}")
-    println("-----")
-//print(f"Sales Tax: ${((((child_meal*actual_children)+(adult_meal*actual_adults))*tax_initial)/100)}")
-    val subTotal = (((kidsMealPrice.toDouble()*numOfChildren.toDouble()) + (adultMealPrice.toDouble()*numOfAdults.toDouble())) * taxInitial.toDouble())/100.0
+    val Subtotal = (kidsMealPrice.toDouble()*numOfChildren.toDouble() + (adultMealPrice.toDouble()*numOfAdults.toDouble()))
     val df = DecimalFormat("#.##")
     df.roundingMode = RoundingMode.DOWN
-    val subTotalRoundoff = df.format(subTotal.toDouble())
-    println(subTotalRoundoff)
-//    println("Sales Tax: ${((((kidsMealPrice.toDouble()*numOfChildren.toDouble()) + (adultMealPrice.toDouble()*numOfAdults.toDouble())) * taxInitial.toDouble())/100.0}")
+    val subTotalTaxRoundoff = df.format(Subtotal.toDouble())
+    println("Subtotal: $${subTotalTaxRoundoff}")
+    println("-----")
+//print(f"Sales Tax: ${((((child_meal*actual_children)+(adult_meal*actual_adults))*tax_initial)/100)}")
+    val subTotalTax = (((kidsMealPrice.toDouble()*numOfChildren.toDouble()) + (adultMealPrice.toDouble()*numOfAdults.toDouble())) * taxInitial.toDouble())/100.0
+    val df2 = DecimalFormat("#.##")
+    df.roundingMode = RoundingMode.DOWN
+    val subTotalRoundoff = df2.format(subTotalTax.toDouble())
+    println("Your tax total is: $${subTotalRoundoff}")
     println("-----")
 //print(f"Total:${(((child_meal*actual_children)+(adult_meal*actual_adults))+(((((child_meal*actual_children)+(adult_meal*actual_adults))*tax_initial)/100)))}")
-//    val total = (kidsMealPrice.toDouble()*)
+    val total = ((kidsMealPrice.toDouble()*numOfChildren.toDouble())+(adultMealPrice.toDouble()*numOfAdults.toDouble()))+((((kidsMealPrice.toDouble()*numOfChildren.toDouble())+(adultMealPrice.toDouble()*numOfAdults.toDouble()))*taxInitial.toDouble())/100.0)
+    val df3 = DecimalFormat("#.##")
+    df.roundingMode = RoundingMode.DOWN
+    val TotalRoundoff = df3.format(total.toDouble())
+    println("The total now is:$${TotalRoundoff}")
 //tip=float(input("How much are you going to pay for a tip?$ "))
-//
-//print(f"Your new total is ${(tip+(((child_meal*actual_children)+(adult_meal*actual_adults))+(((((child_meal*actual_children)+(adult_meal*actual_adults))*tax_initial)/100))))}")
-//
+    println("How much are you going to pay for a tip?\n(Please include value with a decimal including the cents): ")
+    val tip = readln();
+    val df5 = DecimalFormat("#.##")
+    df.roundingMode = RoundingMode.DOWN
+    val tipRoundoff = df5.format(tip.toDouble())
+    println("Your tip amount is: $$tipRoundoff")
+//print(f"Your new total is ${(tip+(((child_meal*actual_children)+(adult_meal*actual_adults))+(((((child_meal*actual_children)+(adult_meal*actual_adults))*tax_initial)/100))))}
+    val totalWithTip = (tip.toDouble()+total)
+//    val df7 = DecimalFormat("#.##")
+//    df.roundingMode = RoundingMode.DOWN
+//    val totalWithTipRoundoff = df7.format(totalWithTip.toDouble())
+//    println("Your new total is $${totalWithTipRoundoff}")
+    println("Your new total is $${totalWithTip}")
 //change=((float(input("What is the payment amount in dollars ? ")))-(tip+(((child_meal*actual_children)+(adult_meal*actual_adults))+(((((child_meal*actual_children)+(adult_meal*actual_adults))*tax_initial)/100)))))
-//
+    println("what is the payment amount in dollars?\n Please enter an amount that will equal or cover the cost of the bill")
+    val payment = readln()
+    val change = ((payment.toDouble()) - (tip.toDouble()+total))
+    val df6 = DecimalFormat("#.##")
+    df.roundingMode = RoundingMode.DOWN
+    val changeRoundoff = df6.format(change.toDouble())
 //print(f"Change: ${change}")
+    while (change >= 0){
+        val df4 = DecimalFormat("#.##")
+        df.roundingMode = RoundingMode.DOWN
+        val TotalRoundoff = df4.format(change.toDouble())
+        print("Your change back is: $${changeRoundoff}\nThanks for coming in")
+        break
+    } //else {
 //
+//    }
 }
