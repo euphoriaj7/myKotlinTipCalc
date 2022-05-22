@@ -69,7 +69,7 @@ fun <boolean> main(args: Array<String>) {
     val changeRoundoff = df6.format(change.toDouble())
 //print(f"Change: ${change}")
     var customerPaid: Boolean = true
-    while (customerPaid) {
+    while (customerPaid == true) {
         if (change <= 0) {
             print("Please put in an amount that will cover the full cost")
         } else {
