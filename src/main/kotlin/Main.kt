@@ -65,10 +65,13 @@ fun main() {
     while (customerPaid == true){
         println("what is the payment amount in dollars?\n Please enter an amount that will equal or cover the cost of the bill")
         val payment = readln()
-        val change = ((payment.toDouble()) - (tip.toDouble() + total))
         val df6 = DecimalFormat("#.##")
         df.roundingMode = RoundingMode.DOWN
-        val changeRoundoff = df6.format(change.toDouble())
+        val paymentRoundoff = df6.format(payment.toDouble())
+        val change = ((paymentRoundoff.toDouble()) - (tip.toDouble() + total))
+        val df7 = DecimalFormat("#.##")
+        df.roundingMode = RoundingMode.DOWN
+        val changeRoundoff = df7.format(change.toDouble())
         if (change < totalWithTipRoundoff.toDouble()) {
             println("Please put in an amount that will cover the full cost!")
         } else {
@@ -76,6 +79,7 @@ fun main() {
             df.roundingMode = RoundingMode.DOWN
             val TotalRoundoff = df4.format(change.toDouble())
             print("Your change back is: $${changeRoundoff}\nThanks for coming in")
+            customerPaid == false
             break
         }
     }
